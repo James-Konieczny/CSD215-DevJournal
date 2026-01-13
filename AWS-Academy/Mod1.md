@@ -50,4 +50,17 @@ SaaS
 - AWS has different categories of services (like: analytics, application integration, blockchain, machine learning, etc)
 - Categories/Services covered in this course: compute, storage, databse, networking and content delivery, management and governance, AWS cost management, security identity and compliance
 
-- 
+## AWS Cloud Adoption Framework
+- People, process and technology must be in alignment for best transition
+-  the framework organizes guidance into 6 areas of focus called perspectives
+-  Helps you identify gaps, where you need to improve your buiness
+-  help you prioritize
+-  align IT goals with buiness goals
+
+# Summary
+- How to define different types of cloud computing
+- describe 6 advantages of cloud computing
+- AWS servies categories
+- AWS Cloud Adoption Framework
+
+- Amazon EC2
