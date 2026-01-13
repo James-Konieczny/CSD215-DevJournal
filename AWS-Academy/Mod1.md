@@ -26,3 +26,28 @@ PaaS
 
 SaaS
 - software as a service
+
+
+### Cloud Computing Deployment Models
+- Represent the cloud environment that you applications can be deployed in
+1. Cloud
+2. Hybrid
+3. On-premises (private cloud)
+
+## Advantages Of Cloud Computing
+1. Trade Capital expense for variable expense (Pay only the reasourser you need, save money on tech and mainting it)
+2. benefit from massive economiews of scale (big company = more people put in money = you pay less)
+3. stop guessing capacity (no guess on infascuture capacity)
+4. increase speed and agility (only a click away, saves time and therefore money)
+5. Focus elsewhere because no need to focus on cloud
+6. go global in minutes, lower latency
+
+## Amazon Web Services
+- A web service is any piece of software that makes itself available over the internet and uses a standaredized format - such as Extensible Markup Language (XML) or JavaScript Object Notation (JSON) - for the request and the response of an application programming interface (API) interaction
+
+- AWS porvides web services: compute, storage, network, database, or other IT reasources, and the tools to use them
+- AWS provides flexiblity: pay for what you use when you use it, able to support scalable soltutions
+- AWS has different categories of services (like: analytics, application integration, blockchain, machine learning, etc)
+- Categories/Services covered in this course: compute, storage, databse, networking and content delivery, management and governance, AWS cost management, security identity and compliance
+
+- 
