@@ -1,4 +1,5 @@
 # AWS Shared Responsibility
+
 - Security and compliance are a shared responsibility between AWS and the customer. 
 - This shared responsibility model is designed to help relieve the customer’s operational burden. 
 - At the same time, to provide the flexibility and customer control that enables the deployment of customer solutions on AWS, the customer remains responsible for some aspects of the overall security. 
@@ -173,3 +174,27 @@
 - Explore IAM users and groups
 - Recognize how to secure AWS data
 - Recognize AWS compliance programs
+
+
+## In class Notes
+- CloudTrail is a users history report
+- Biling and Cost Management, You can create a budget (they have a default 'zero spend budget') so that you get alerted when you go over budget
+- They also have a forcast spending, so you are notifided if the trend of your spending is on track to go over budget
+- IAM Dashboard gives you a list of recommended best practices 
+- There are default roles that AWS has pre-set up, same with policies
+- Your groups can have multiple users (users can have multiple groups), your roles and be assigned to groups, every role has policies to define rules
+- Policies can be attached to users, groups and roles
+
+- AWS Account = The big boy main account (like an organization, and users are the employees) with root user
+- However if you have really big organizations, you might want multiple accounts for each departement. This is OUs purporse
+
+- Keys help your encrypt and sucure transmitting datat
+- Cognito is a SaaS, and gives you a users sign-up/sign-in. Its for acutal applications users (as opposed to IAM users, are like your co-workers, other developers or datatbase workers, etc)
+- **IAM users DO NOT EQUAL application users**
+- Data can be encrypted when it's in transit and when its at rest. Keys and secert keys are used to encrypt the data.
+- You need the key to decrypt the data. AWS KMS is used to store and keep track of your secret keys
+- Most things on AWS are shut down, private and protected by default so that its more secure.
+- AWS Config allows you generate a report and keep track of all your settings on AWS account
+- AWS Artifact....
+- AWS Servuce Catalog lets you manage IT services
+- Cyber Security services: Macie(proactive), Inspector (report), GuardDuty(threat detection)
