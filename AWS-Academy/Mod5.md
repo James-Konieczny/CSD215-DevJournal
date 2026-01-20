@@ -1,2 +1,11 @@
 # Networking and Content Delivery
-- 
+- AMAZON VPC
+- a computer network is two or more machines that are connected together via router or switch to communicate together
+- Network can be logically partirioned into subnets
+- IP (internet protocol address), is unique and is 4 numbers spearated by dots, then transfered into bits
+- 32 bit is IPv4
+- 128 bit is IPv6, it is longer and has letters (hex?)
+- Classles inter-domain routing (CIDR), its an IP address but its followed by a / and a number
+- CIDR is a way to express a group of IP addresses that are consecutive to each other
+- Open Systems Interconnection (OSI) Model is a conceptual model that is used to explain data as it travels over a network
+- Application, Presentation, Session, Transport, Network, Data Link, Physical 
