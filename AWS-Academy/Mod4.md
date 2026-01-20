@@ -1,0 +1,175 @@
+# AWS Shared Responsibility
+- Security and compliance are a shared responsibility between AWS and the customer. 
+- This shared responsibility model is designed to help relieve the customer’s operational burden. 
+- At the same time, to provide the flexibility and customer control that enables the deployment of customer solutions on AWS, the customer remains responsible for some aspects of the overall security. 
+- The differentiation of who is responsible for what is commonly referred to as security “of” the cloudversus security “in” the cloud.
+- AWS operates, manages, and controls the components from the software virtualization layer down to the physical security of the facilities where AWS services operate.
+- AWS is responsiblefor protecting the infrastructure that runs all the services thatare offered in the AWS Cloud. 
+- This infrastructure is composed of the hardware, software, networking, and facilities that run the AWS Cloud services.
+- The customer is responsiblefor the encryption of data at rest and data in transit. 
+- The customer should also ensure that the network is configured for security and that security credentials and logins are managed safely. 
+- Additionally, the customer is responsible for the configuration of security groups and the configuration of the operating system that run on compute instances that they launch (including updates and security patches). 
+---------
+- AWS is responsible for the physical infrastructure that hosts your resources, including:
+- Physical security of data centers with controlled, need-based access; located in nondescript facilities, with 24/7 security guards;two-factor authentication; access logging and review; video surveillance; and disk degaussing and destruction.
+- Hardware infrastructure,such as servers, storage devices, and other appliances that AWS relies on.•Software infrastructure,which hosts operating systems, service applications, and virtualization software.
+- Network infrastructure, such asrouters, switches, load balancers, firewalls, and cabling. 
+- AWS also continuously monitors the network at external boundaries, secures access points, and provides redundant infrastructure with intrusion detection.
+----------
+- Some keytakeaways from this section of the module include:
+- AWS and the customer share security responsibilities–•AWS is responsible for security ofthe cloud
+- Customer is responsible for security inthe cloud•AWS is responsible for protecting the infrastructure—including hardware, software, networking, and facilities—that run AWS Cloud services
+- For services that are categorized as infrastructure as a service (IaaS),the customer is responsible for performing necessary security configuration and management tasks
+- For example, guest OS updates and security patches, firewall, security group configurations
+----------
+- AWS Identity and Access Management (IAM)allows you to control access to compute, storage, database, and application services in the AWS Cloud.
+- IAM can be used to handle authentication, and to specify and enforce authorization policies so that you can specify which users can access which services.
+- IAM is a tool that centrally manages access to launching, configuring, managing, and terminating resources in your AWS account.
+- It provides granular control over access to resources, including the ability to specify exactly which API calls the user is authorized to make to each service.
+- Whether you use the AWS Management Console, the AWS CLI, or the AWS software development kits (SDKs), every call to an AWS service is an API call.
+- With IAM, you can manage whichresources can be accessed by who,and howtheseresourcescan be accessed.
+- You can grant different permissions to different people for different resources.
+- For example, you might allow some users full access to Amazon EC2, Amazon S3, Amazon DynamoDB, Amazon Redshift, and other AWS services.
+- However, for other users, you might allow read-only access to only a few S3 buckets.
+- Similarly, you might grant permission to other users to administer only specific EC2 instances.
+- You could also allow a few usersto access only the account billing information, but nothing else.
+- IAM is a feature of your AWS account, and it is offered at no additional charge.
+----------
+- An IAM user is a person or application that is defined in an AWS account, and that must make API calls to AWS products.
+- Each user must have a unique name (with no spaces in the name) within the AWS account, and a set of security credentials that is not shared with other users.
+- These credentials are different from the AWS account root user security credentials.
+- Each user is defined in one and only one AWS account.An IAM group is a collection of IAM users.
+- You can use IAM groups to simplify specifying and managing permissions for multiple users.
+- An IAM policy is a document that defines permissions to determine what users can do in the AWS account.
+- A policy typically grants access to specific resources and specifies what the user can do with those resources.
+- Policies can also explicitly deny access.
+- An IAM roleis a tool for granting temporary access to specific AWS resources in an AWS account.
+----------
+- Authenticationis a basic computer security concept: a user or system must first prove their identity.
+- Consider how you authenticate yourself when you go to the airport and you want to get through airport security so that you can catch your flight.
+- In this situation, you must present some form of identification to the security official to prove who you are before you can enter a restricted area.
+- A similarconcept applies for gaining access to AWS resources in the cloud. When you define an IAM user, you select what type of access the user is permitted to use to access AWS resources.
+- You can assign two different types of access to users: programmatic access and AWS Management Console access.
+- You can assign programmatic access only, console access only, or you can assign both types of access.
+- If you grant programmatic access, the IAM user will be required to present anaccess key IDanda secret access keywhen they make an AWS API call by using the AWS CLI, the AWS SDK, or some other development tool.
+- If you grant AWS Management Console access, the IAM user will be required to fill in the fields that appear in the browser login window.
+- The user is prompted to provide either the 12-digit account ID or the corresponding account alias.
+- The user must also enter their IAM user name and password.
+- If multi-factor authentication (MFA) is enabled for the user, they will also be prompted for an authentication code.
+-----------
+- AWS servicesand resources can be accessed by using the AWS Management Console, the AWS CLI, or through SDKs and APIs.
+- For increased security, werecommend enabling MFA. With MFA, users and systems must provide an MFA token—in addition to the regular sign-in credentials—before they can access AWS services and resources.
+- Options for generating the MFA authentication token include virtual MFA-compliant applications(such as Google Authenticator or Authy 2-Factor Authentication), U2F security key devices, and hardware MFA devices.
+-----------
+- Some keytakeaways from this section of the module include:
+- IAM policies are constructed with JavaScript Object Notation (JSON) and define permissions.
+- IAM policies can be attached to any IAM entity.•Entities are IAM users, IAM groups, and IAM roles.
+- An IAM user provides a way for a person, application, or service to authenticate to AWS.
+- An IAM group is a simple way to attach the same policies to multiple users.
+- An IAM role can have permissions policies attached to it,and can be used to delegate temporary access to users or applications.
+-----------
+- The keytakeaways from this section of the module are all related to best practices for securing an AWS account. Those best practice recommendations include:
+- Secure logins with multi-factor authentication (MFA).
+- Delete account root user access keys.
+- Create individual IAM users and grant permissions according to the principle of least privilege.
+- Use groups to assign permissions to IAM users.
+- Configure a strong password policy.
+- Delegate using roles instead of sharing credentials.
+- Monitor account activity using AWS CloudTrail.
+-----------
+- AWS Organizationsis an account management service that enables you to consolidate multiple AWS accounts into anorganizationthat you create and centrally manage.
+- Here, the focus is on the security features that AWS Organizations provides.
+- One helpful security feature is that you can group accounts into organizational units(OUs) and attach different access policies to each OU.
+- For example, if you have accounts that should only be allowed to access AWS services that meet certain regulatory requirements, you can put those accounts into one OU.
+- You then can define a policy that blocks OU access to services that do not meet those regulatory requirements, and then attach thepolicy to the OU.
+- Another security feature is that AWS Organizationsintegrates with and supports IAM.
+- AWS Organizations expands that control to the account level by giving you control over what users and roles in an account or a group of accounts can do.
+- The resulting permissions are the logical intersection of what is allowed by the AWS Organizations policy settings and what permissions are explicitly granted by IAM in the account for that user or role.
+- The user can access only what is allowed byboththe AWS Organizations policies and IAM policies.
+- Finally, AWS Organizations provides service control policies (SCPs) that enable you to specify the maximum permissions that member accounts in the organization can have.
+- In SCPs, you can restrict which AWS services, resources, and individual actions the users and roles in each member account can access.
+- These restrictions even override the administrators of member accounts.
+- When AWS Organizations blocks access to a service, resource, or API action, a user or role in that account can't access it, even if an administrator of a member account explicitly grants such permissions.
+-----------
+- Here is a closer look at the Service control policies (SCPs) feature of AWS Organizations.
+- SCPs offer central control over the maximum available permissionsfor all accounts in your organization, enabling you to ensure that your accounts stay in your organization’s access control guidelines.
+- SCPs are available only in an organization that hasall features enabled, including consolidated billing.
+- See more on enabling features at https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html.
+- SCPs aren't available if your organization has enabled onlythe consolidated billing features.
+- For instructions about enabling SCPs, seeEnabling and Disabling a Policy Type on a Root at https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root.SCPs are similar to IAM permissions policiesand they use almost the same syntax.
+- However, an SCP never grants permissions.
+- Instead, SCPs are JSON policies that specify the maximum permissions for an organization or OU.
+- Attaching an SCP to the organization root or an organizational unit (OU) defines a safeguard for the actions that accounts in the organization root or OU can do. However, it is not a substitute for well-managed IAM configurations within each account.
+- You must still attachIAM policiesto users and roles in your organization's accounts to actually grant permissions to them.
+- See more on IAM policies at https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html.
+------------
+- AWS Key Management Service (AWS KMS) is a service that enables you to create and manage encryption keys, and to control the use of encryption across a wide range of AWS services and your applications.
+- AWS KMS is a secure and resilient service that uses hardware security modules (HSMs) that were validated under Federal Information Processing Standards (FIPS) 140-2(or are in the process of being validated) to protect your keys.
+- AWS KMS also integrates with AWS CloudTrail to provide you with logs of all key usage to help meet your regulatory and compliance needs.Customer master keys (CMKs) are used to control access to data encryption keys that encrypt and decrypt your data.
+- You can create new keys when you want, and you can manage who has access to these keysand who can use them. You can also import keys from your own key management infrastructure into AWS KMS.
+- AWS KMS integrates with most AWS services,which means that you can use AWS KMS CMKs to control the encryption of the data that you store in these services.
+- Tolearn more, seeAWS Key Management Service features at https://aws.amazon.com/kms/features/
+-------------
+- Amazon Cognito provides solutions to control access to AWS resources from your application.
+- You can define roles and map users to different roles so your application can access only the resources that are authorized for each user.
+- Amazon Cognito uses common identity management standards, such as Security Assertion Markup Language (SAML) 2.0.SAML is an open standard for exchanging identity and security information with applications and service providers.
+- Applications and service providers that support SAML enable you to sign in by using your corporate directory credentials, such as your username and password from Microsoft Active Directory.
+- With SAML, you can use single sign-on (SSO) to sign in to all of your SAML-enabled applications by using a single set of credentials.
+- Amazon Cognito helps you meet multiple security and compliance requirements, including requirements for highly regulated organizations such as healthcare companies and merchants.
+- Amazon Cognito iseligiblefor use with the US Health Insurance Portability and Accountability Act (HIPAA –see more on HIPAA at https://aws.amazon.com/compliance/hipaa-compliance/).
+- It can also be used for workloads that are compliant with the Payment Card IndustryData Security Standard(PCI DSS –more on PCI DSS at https://aws.amazon.com/compliance/pci-dss-level-1-faqs/);
+- the American Institute of CPAs (AICPA) Service Organization Control (SOC –more on SOC at https://aws.amazon.com/compliance/soc-faqs/);
+- the InternationalOrganization for Standardization (ISO) and International Electrotechnical Commission (IEC) standards.
+-  More onISO/IEC 27001 at https://aws.amazon.com/compliance/iso-27001-faqs/,ISO/IEC 27017 at https://aws.amazon.com/compliance/iso-27017-faqs/, andISO/IEC 27018 at https://aws.amazon.com/compliance/iso-27018-faqs/;andISO 9001 at https://aws.amazon.com/compliance/iso-9001-faqs/
+-------------
+- AWS Shield is a managed distributed denial of service (DDoS) protection service that safeguards applications that run on AWS.
+- It provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection.
+- AWS Shield helps protects your website from all types of DDoS attacks, including Infrastructure layer attacks (like UserDatagram Protocol—or UDP—floods), state exhaustion attacks (like TCP SYN floods), and application-layer attacks (like HTTP GET or POST floods).
+- For examples,see the AWS WAF Developer Guide at https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+- AWS Shield Standard is automatically enabled to all AWS customers at no additional cost.AWS Shield Advanced is an optional paid service.
+- AWS Shield Advanced provides additional protections against more sophisticated and larger attacks for your applications that run on Amazon EC2, Elastic Load Balancing, Amazon CloudFront, AWS Global Accelerator, and Amazon Route 53.
+- AWS Shield Advanced is available to all customers.
+- However, to contact the DDoS Response Team, customers need tohave either Enterprise Support or Business Support from AWS Support.
+-------------
+- Data encryption is an essential tool to usewhen your objective is to protect digital data.
+- Data encryption takes data that is legible and encodes it so that it is unreadable to anyone who does not have access to the secret key that can be used to decode it.
+- Thus, even if an attacker gains access to your data, they cannot make sense of it.
+- Data at rest refers to data that is physically stored on disk or on tape.
+- You can create encrypted file systems on AWS so that all your data and metadata is encrypted at rest by using the open standard AdvancedEncryption Standard (AES)-256 encryption algorithm.
+- When you use AWS KMS, encryption and decryption arehandled automatically and transparently, so thatyou do not need to modify your applications.
+- If your organization is subject to corporate or regulatory policies that require encryption of data and metadata at rest, AWS recommends  enabling encryption on all services that store your data.
+- You can encrypt data stored in any service that is supported by AWS KMS.
+- See How AWS Services use AWS KMS for a list of supported services at https://docs.aws.amazon.com/kms/latest/developerguide/service-integration.html.
+------------
+- Data in transit refers to data that is moving across the network.
+- Encryption of data in transit is accomplished by using Transport Layer Security (TLS) 1.2 with an open standard AES-256 cipher.
+- TLS was formerly called Secure Sockets Layer (SSL).
+- AWS Certificate Manageris a service that enables you to provision, manage, and deploy SSL or TLS certificates for use with AWS services and your internal connected resources.
+-  SSL or TLS certificates are used to secure network communications and establish the identity of websites over the internet, and also resources on private networks.
+-  With AWS Certificate Manager, you can request a certificate and then deploy it on AWS resources (such as load balancers or CloudFront distributions).
+-  AWS Certificate Manager also handles certificate renewals.
+-  Web traffic that runs over HTTP is not secure.
+-  However, traffic that runs over Secure HTTP (HTTPS) is encrypted by using TLS or SSL.
+-  HTTPS traffic is protected against eavesdropping and man-in-the-middle attacks because of the bidirectional encryption of the communication.
+-  AWS services support encryption for data in transit.
+-  Two examples of encryption for data in transit are shown.
+-  The first example shows an EC2 instance that has mounted an Amazon EFS shared file system.
+-  All data traffic between the instance and Amazon EFS is encrypted by using TLS or SSL.
+-  For further details about this configuration, see Encryption of EFS Data in Transit at https://docs.aws.amazon.com/whitepapers/latest/efs-encrypted-file-systems/encryption-of-data-in-transit.html
+-  The second example shows the use of AWS Storage Gateway, a hybrid cloud storage service that provides on-premises access to AWS Cloud storage.
+-  In this example, the storage gateway is connected across the internet to Amazon S3, and the connection encrypts the data in transit 
+-------------
+- Some keytakeaways from this section of the module include:
+- AWS security compliance programs provide information about the policies, processes, and controls that are established and operated by AWS.
+- AWS Config is used to assess, audit, and evaluate the configurations of AWS resources.
+- AWS Artifact provides access to security and compliance reports.
+-------------
+- In summary, in this module you learned how to:
+- Recognize the shared responsibility model
+- Identify the responsibility of the customer and AWS
+- Recognize IAM users, groups, and roles
+- Describe different types of security credentials in IAM
+- Identify the steps to securing a new AWS account
+- Explore IAM users and groups
+- Recognize how to secure AWS data
+- Recognize AWS compliance programs
