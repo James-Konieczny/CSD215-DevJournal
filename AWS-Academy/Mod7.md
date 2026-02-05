@@ -14,7 +14,16 @@ When used as a boot partition, Amazon EC2 instances can be stopped and subsequen
 
 For those wanting even more durability, Amazon EBS provides the ability to create point-in-time consistent snapshots of your volumes that are then stored in Amazon Simple Storage Service (Amazon S3) and automatically replicated across multiple Availability Zones. These snapshots can be used as the starting point for new Amazon EBS volumes and can protect your data for long-term durability. You can also easily share these snapshots with co-workers and other AWS developers.
 
+- EBS Documentation: https://aws.amazon.com/ebs/
 
+- Amazon EBS volumes deliver the following features:
+- Persistent storage: Volume lifetime is independent of any particular Amazon EC2 instance.
+- General purpose: Amazon EBS volumes are raw, unformatted block devices that can be used from any operating system.
+- High performance: Amazon EBS volumes are equal to or better than local Amazon EC2 drives.
+- High reliability: Amazon EBS volumes have built-in redundancy within an Availability Zone.
+- Designed for resiliency: The AFR (Annual Failure Rate) of Amazon EBS is between 0.1% and 1%.
+- Variable size: Volume sizes range from 1 GB to 16 TB.
+- Easy to use: Amazon EBS volumes can be easily created, attached, backed up, restored, and deleted.
 
 ## Amazon S3
 
