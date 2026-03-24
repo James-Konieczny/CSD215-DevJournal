@@ -1,0 +1,3 @@
+# Notes. etc
+
+- when going to website, via the ec2 instance public ip address, makes sure you are using HTTP (NOT HTTPS, there will be nothing there)
