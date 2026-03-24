@@ -1,3 +1,66 @@
 # Notes. etc
 
 - when going to website, via the ec2 instance public ip address, makes sure you are using HTTP (NOT HTTPS, there will be nothing there)
+
+
+```
+vscode ➜ /workspaces/aws-project-26w-James-Konieczny (aws-project) $ source /workspaces/aws-project-26w-James-Konieczny/.venv/bin/activate
+(.venv) vscode ➜ /workspaces/aws-project-26w-James-Konieczny (aws-project) $  source /workspaces/aws-project-26w-James-Konieczny/.venv/bin/activate
+(.venv) vscode ➜ /workspaces/aws-project-26w-James-Konieczny (aws-project) $ ssh -i keypair.pem ec2-user@44.222.235.24
+The authenticity of host '44.222.235.24 (44.222.235.24)' can't be established.
+ED25519 key fingerprint is SHA256:JUUNnPaUL/y9yV3Hxo6jGgsqHK3muxdVi0V1NXyA6rg.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '44.222.235.24' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-10-0-0-187 ~]$ systemctl status diceapp
+● diceapp.service - Gunicorn service for Flask dice app
+     Loaded: loaded (/etc/systemd/system/diceapp.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2026-03-24 13:32:29 UTC; 25min ago
+   Main PID: 25072 (gunicorn)
+      Tasks: 2 (limit: 493)
+     Memory: 53.5M
+        CPU: 636ms
+     CGroup: /system.slice/diceapp.service
+             ├─25072 /home/ec2-user/dice/.venv/bin/python3 /home/ec2-user/dice/.venv/bin/gunicorn -b 127.0.0.1:8000 app.flask_app:app
+             └─25268 /home/ec2-user/dice/.venv/bin/python3 /home/ec2-user/dice/.venv/bin/gunicorn -b 127.0.0.1:8000 app.flask_app:app
+
+Mar 24 13:32:29 ip-10-0-0-187.ec2.internal systemd[1]: Started diceapp.service - Gunicorn service for Flask dice app.
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal gunicorn[25072]: [2026-03-24 13:32:30 +0000] [25072] [INFO] Starting gunicorn 23.0.0
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal gunicorn[25072]: [2026-03-24 13:32:30 +0000] [25072] [INFO] Listening at: http://127.0.0.1:8000 (25072)
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal gunicorn[25072]: [2026-03-24 13:32:30 +0000] [25072] [INFO] Using worker: sync
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal gunicorn[25268]: [2026-03-24 13:32:30 +0000] [25268] [INFO] Booting worker with pid: 25268
+Mar 24 13:47:23 ip-10-0-0-187.ec2.internal gunicorn[25268]: /home/ec2-user/dice/.venv/lib64/python3.9/site-packages/boto3/compat.py:89: PythonDeprecationWarning: Boto3 will no longer support Python 3.9 starting April 2>
+Mar 24 13:47:23 ip-10-0-0-187.ec2.internal gunicorn[25268]:   warnings.warn(warning, PythonDeprecationWarning)
+[ec2-user@ip-10-0-0-187 ~]$ systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2026-03-24 13:32:30 UTC; 25min ago
+    Process: 25351 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 25377 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 25437 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+   Main PID: 25481 (nginx)
+      Tasks: 2 (limit: 493)
+     Memory: 5.1M
+        CPU: 65ms
+     CGroup: /system.slice/nginx.service
+             ├─25481 "nginx: master process /usr/sbin/nginx"
+             └─25483 "nginx: worker process"
+
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal nginx[25377]: nginx: [warn] conflicting server name "_" on 0.0.0.0:80, ignored
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal nginx[25377]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal nginx[25377]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal nginx[25437]: nginx: [warn] conflicting server name "_" on 0.0.0.0:80, ignored
+Mar 24 13:32:30 ip-10-0-0-187.ec2.internal systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+[ec2-user@ip-10-0-0-187 ~]$ 
+```
