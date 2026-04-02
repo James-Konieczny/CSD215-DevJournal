@@ -150,3 +150,41 @@ Base b2 = new Sub();
 b1.print();  // Prints "Base"
 b2.print();  // Prints "Sub"
 ```
+- Abstraction via interfaces built in!
+```
+interface Runnable {
+  void run();
+}
+
+class myClass implements Runable {
+  public void run() { .. }
+}
+
+// Elsewhere in the code...
+public void runThemAll(Runnable[] allTheThings) {
+  for ( Runnable r : allTheThings ) {
+      r.run();
+  }
+}
+```
+Examples:  
+- C++  
+- C#  
+- Java  
+- Kotlin  
+- PHP  
+- Python  
+- Ruby  
+
+## Functional Programming
+- Often academic and jargon-y  
+    - Monads and functors and Lambdas, [oh my](https://degoes.net/articles/fp-glossary)!  
+    - FP is rooted in a field of mathematics called "Lambda Calculus"  
+**We will focus on a practical FP techniques that will be useful anywhere**  
+    
+Typical academic definition:  
+- Functional Programming involves writing software using pure mathematical functionis that have no side effects  
+                  
+**Definition**: a side effect is anything a function does other than return a value  
+- E.g print to screen, send email, update database, update instance varibale  
+- Side effects cause problems when you want a value but not a side effect  
