@@ -101,9 +101,52 @@ Key Concepts
 - Polymorphism
        
 ## Beofre OOP...
-- Possible to write code in an OOP style; requires conscious discipline
-        - Keep methods and related instance variables in same file by convention
-        - Must manually provide 'this' parameter to methods
-        - Use of 'function pointers' to accomplish inhertiance
-        - None of these are enforced or enabled by the language
-        - E.g. [Stack Overflow](https://stackoverflow.com/questions/415452/object-orientation-in-c/415536#415536)
+- Possible to write code in an OOP style; requires conscious discipline  
+        - Keep methods and related instance variables in same file by convention  
+        - Must manually provide 'this' parameter to methods  
+        - Use of 'function pointers' to accomplish inhertiance  
+        - None of these are enforced or enabled by the language  
+        - E.g. [Stack Overflow](https://stackoverflow.com/questions/415452/object-orientation-in-c/415536#415536)  
+- Why bother with all this organization effort?  
+        - Allowed programmers to table harder problems without drowning in complexity!
+
+## OOP Languages
+- Introduced syntax to explicityly combine the variables and methods of a class
+```
+class MyClass {
+  int myInstanceVaruable1;
+  String myInstanceVariable2;
+
+  public void myMethod1() { .. }
+  public int myMethod2() { .. }
+}
+```
+
+- Implicit 'this' instead of needing to pass object as first parameter
+```
+class MyClass
+  public void myMethod() {
+      // 'this' refers to the object on which the method was called
+      this.something = somethingElse;
+  }
+}
+var c = new MyClass();
+c.myMethod();    // Instead of myMethod(c);
+```
+
+- Inheritance and polymorphism built in!
+```
+class Base {
+    public void print() { System.out.println("Base"); }
+}
+
+class Sub extends Base {
+    @Override
+    public void print() { System.out.println("Sub"); }
+}
+
+Base b1 = new Base();
+Base b2 = new Sub();
+b1.print();  // Prints "Base"
+b2.print();  // Prints "Sub"
+```
