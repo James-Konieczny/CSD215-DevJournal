@@ -20,16 +20,17 @@ Category walk-through notes (braindump)
 
 ## Start Of Lab - Supplier Implementation  
 - What I'll need to do:
-- Files that will be created/changed:
-        - Supplier
-        - SupplierView
-        - SupplierEditView
-        - SupplierNewView
-        - SupplierRepository
-        - SupplierValidator
-        - SupplierController
-
-        - MainLayout
-        - AppController
-        - DataService
+- Files that will be created/changed:  
+  - Supplier
+  - SupplierView
+  - SupplierEditView
+  - SupplierNewView
+  - SupplierRepository
+  - SupplierValidator
+  - SupplierController  
+<br>
+      - MainLayout  
+      - AppController  
+      - DataService  
    
+- In CategoryRepository.java, what does allCategoryNames() and countProductsInCategory() do?
