@@ -1,5 +1,5 @@
 # Lab Notes
-Category walk-through notes
+Category walk-through notes (braindump)
 - CategoryController
     - Sqeuence,
     - no logic - data comes from here and goes to here
@@ -16,4 +16,20 @@ Category walk-through notes
 - DataService.java pulls on the repositories we need, knows about database connection. Make sure the reposiorty is only called once
 
 - CategoryValidor - take some unvaild category information and make sure its vaild (the puprpose of validating data is to vaildate user data - the rules of the data)
-- 
+
+
+## Start Of Lab - Supplier Implementation  
+- What I'll need to do:
+- Files that will be created/changed:
+        - Supplier
+        - SupplierView
+        - SupplierEditView
+        - SupplierNewView
+        - SupplierRepository
+        - SupplierValidator
+        - SupplierController
+
+        - MainLayout
+        - AppController
+        - DataService
+   
